@@ -1,0 +1,270 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Argos.Framework.ServiceInjector</name>
+    </assembly>
+    <members>
+        <member name="T:Argos.Framework.ServiceInjector.AbstractArgosServiceProvider`1">
+            <summary>
+            Abstract class that implements a ready to use <see cref="T:Argos.Framework.ServiceInjector.Contracts.Interfaces.IArgosServiceProvider"/> singleton implementation.
+            </summary>
+            <remarks>This class creates an internal <see cref="T:Argos.Framework.ServiceInjector.Contracts.Interfaces.IArgosServiceContainer"/> instance and register the specified services declared 
+            in abstract <see cref="M:Argos.Framework.ServiceInjector.AbstractArgosServiceProvider`1.RegisterServices(Argos.Framework.ServiceInjector.Contracts.Interfaces.IArgosServiceContainer)"/> function, and exposes a public <see cref="T:Argos.Framework.ServiceInjector.Contracts.Interfaces.IArgosServiceProvider"/> singleton instance through the 
+            <see cref="P:Argos.Framework.ServiceInjector.AbstractArgosServiceProvider`1.ServiceProvider"/> property, for request the services.
+            
+            <para>Use this abstraction to ease create and setup <see cref="T:Argos.Framework.ServiceInjector.Contracts.Interfaces.IArgosServiceProvider"/> singleton instances in your project.</para></remarks>
+        </member>
+        <member name="P:Argos.Framework.ServiceInjector.AbstractArgosServiceProvider`1.ServiceProvider">
+            <summary>
+            Singleton instance of this <see cref="T:Argos.Framework.ServiceInjector.Contracts.Interfaces.IArgosServiceProvider"/> instance.
+            </summary>
+        </member>
+        <member name="M:Argos.Framework.ServiceInjector.AbstractArgosServiceProvider`1.#ctor">
+            <summary>
+            Initializes this <see cref="T:Argos.Framework.ServiceInjector.Contracts.Interfaces.IArgosServiceProvider"/> instance.
+            </summary>
+        </member>
+        <member name="M:Argos.Framework.ServiceInjector.AbstractArgosServiceProvider`1.RegisterServices(Argos.Framework.ServiceInjector.Contracts.Interfaces.IArgosServiceContainer)">
+            <summary>
+            Abstract method where register the services for the internal <see cref="T:Argos.Framework.ServiceInjector.Contracts.Interfaces.IArgosServiceContainer"/>.
+            </summary>
+            <param name="serviceContainer">The internal <see cref="T:Argos.Framework.ServiceInjector.Contracts.Interfaces.IArgosServiceContainer"/> instance.</param>
+        </member>
+        <member name="T:Argos.Framework.ServiceInjector.ArgosServiceProviderFactory">
+            <summary>
+            Factory class with functions to create <see cref="T:Argos.Framework.ServiceInjector.Contracts.Interfaces.IArgosServiceContainer"/> instances.
+            </summary>
+        </member>
+        <member name="M:Argos.Framework.ServiceInjector.ArgosServiceProviderFactory.SetCustomServiceContainerImplementation``1">
+            <summary>
+            Sets a custom <see cref="T:Argos.Framework.ServiceInjector.Contracts.Interfaces.IArgosServiceContainer"/> implementation to use with this factory.
+            </summary>
+            <typeparam name="T">A type that implements <see cref="T:Argos.Framework.ServiceInjector.Contracts.Interfaces.IArgosServiceContainer"/> interface.</typeparam>
+            <remarks>This function allow to developers to changes or improves the service container implementation in your projects 
+            without changing the service container creation call using this factory.</remarks>
+        </member>
+        <member name="M:Argos.Framework.ServiceInjector.ArgosServiceProviderFactory.CreateServiceContainer">
+            <summary>
+            Creates a new <see cref="T:Argos.Framework.ServiceInjector.Contracts.Interfaces.IArgosServiceContainer"/> instance.
+            </summary>
+            <returns>Returns a new ready <see cref="T:Argos.Framework.ServiceInjector.Contracts.Interfaces.IArgosServiceContainer"/> instance to store services to request them when are needed.</returns>
+        </member>
+        <member name="M:Argos.Framework.ServiceInjector.ArgosServiceProviderFactory.CreateServiceContainer(System.Action{Argos.Framework.ServiceInjector.Contracts.Interfaces.IArgosServiceContainer})">
+            <summary>
+            Creates a new <see cref="T:Argos.Framework.ServiceInjector.Contracts.Interfaces.IArgosServiceContainer"/> instance.
+            </summary>
+            <param name="registerServices">Lambda method where setup and register the services for this container.</param>
+            <returns>Returns a new ready <see cref="T:Argos.Framework.ServiceInjector.Contracts.Interfaces.IArgosServiceContainer"/> instance to store services to request them when are needed.</returns>
+        </member>
+        <member name="T:Argos.Framework.ServiceInjector.Contracts.Exceptions.InterfaceIsNotGenericException">
+            <summary>
+            Exception for when trying to compose a generic service from a non generic interface.
+            </summary>
+        </member>
+        <member name="M:Argos.Framework.ServiceInjector.Contracts.Exceptions.InterfaceIsNotGenericException.#ctor(System.Type)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="type"><see cref="T:System.Type"/> that throw the exception.</param>
+        </member>
+        <member name="T:Argos.Framework.ServiceInjector.Contracts.Exceptions.InvalidServiceClassException">
+            <summary>
+            Exception for when trying to register a type as service implementation that not is a class.
+            </summary>
+            <remarks>You only can register classes as service implementation.</remarks>
+        </member>
+        <member name="M:Argos.Framework.ServiceInjector.Contracts.Exceptions.InvalidServiceClassException.#ctor(System.Type)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="service"><see cref="T:System.Type"/> that throw the exception.</param>
+        </member>
+        <member name="T:Argos.Framework.ServiceInjector.Contracts.Exceptions.InvalidServiceInterfaceException">
+            <summary>
+            Exception for when trying to register a service using type that not are an interface.
+            </summary>
+            <remarks>You only can register services using interfaces.</remarks>
+        </member>
+        <member name="M:Argos.Framework.ServiceInjector.Contracts.Exceptions.InvalidServiceInterfaceException.#ctor(System.Type)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="type"><see cref="T:System.Type"/> that throw the exception.</param>
+        </member>
+        <member name="T:Argos.Framework.ServiceInjector.Contracts.Exceptions.RegisterGenericSingletonServiceException">
+            <summary>
+            Exception for when trying to register a generic service as singleton service.
+            </summary>
+        </member>
+        <member name="M:Argos.Framework.ServiceInjector.Contracts.Exceptions.RegisterGenericSingletonServiceException.#ctor(System.Type)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="type"><see cref="T:System.Type"/> that throw the exception.</param>
+        </member>
+        <member name="T:Argos.Framework.ServiceInjector.Contracts.Exceptions.ServiceAbstractClassException">
+            <summary>
+            Exception for when you trying to register an abstract class as service.
+            </summary>
+            <remarks>You can't register abstract classes as services.</remarks>
+        </member>
+        <member name="M:Argos.Framework.ServiceInjector.Contracts.Exceptions.ServiceAbstractClassException.#ctor(System.Type)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="service"><see cref="T:System.Type"/> that throw the exception.</param>
+        </member>
+        <member name="T:Argos.Framework.ServiceInjector.Contracts.Exceptions.ServiceAlreadyRegisteredException">
+            <summary>
+            Exception for when trying to register a service using an already registered interface.
+            </summary>
+            <remarks>Each service must be using an unique interface as key.</remarks>
+        </member>
+        <member name="M:Argos.Framework.ServiceInjector.Contracts.Exceptions.ServiceAlreadyRegisteredException.#ctor(System.Type)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="service"><see cref="T:System.Type"/> that throw the exception.</param>
+        </member>
+        <member name="T:Argos.Framework.ServiceInjector.Contracts.Exceptions.ServiceNotFoundException">
+            <summary>
+            Exception for when trying to get a service that not is registered in the container.
+            </summary>
+            <remarks>Ensure that the service is registered in the container or check the container where you request the service.</remarks>
+        </member>
+        <member name="M:Argos.Framework.ServiceInjector.Contracts.Exceptions.ServiceNotFoundException.#ctor(System.Type)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="template"><see cref="T:System.Type"/> interface that throw the exception.</param>
+        </member>
+        <member name="T:Argos.Framework.ServiceInjector.Contracts.Exceptions.ServiceNotImplementsInterfaceException">
+            <summary>
+            Exception for when trying to register a service that not implements the required interface.
+            </summary>
+            <remarks>You must fully implements the interface in your service implementation.</remarks>
+        </member>
+        <member name="M:Argos.Framework.ServiceInjector.Contracts.Exceptions.ServiceNotImplementsInterfaceException.#ctor(System.Type,System.Type)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="template"><see cref="T:System.Type"/> interface that service must implement.</param>
+            <param name="implementation"><see cref="T:System.Type"/> that throw the exception.</param>
+        </member>
+        <member name="T:Argos.Framework.ServiceInjector.Contracts.Interfaces.IArgosServiceContainer">
+            <summary>
+            A container object to store and request services.
+            </summary>
+            <remarks>Use this interface to implements an object to register and store a group of related classes using their interfaces.</remarks>
+        </member>
+        <member name="M:Argos.Framework.ServiceInjector.Contracts.Interfaces.IArgosServiceContainer.AddServiceProvider(Argos.Framework.ServiceInjector.Contracts.Interfaces.IArgosServiceProvider)">
+            <summary>
+            Adds a <see cref="T:Argos.Framework.ServiceInjector.Contracts.Interfaces.IArgosServiceProvider"/> reference to this container used to resolve external dependencies.
+            </summary>
+            <param name="serviceProvider"><see cref="T:System.IServiceProvider"/> reference.</param>
+        </member>
+        <member name="M:Argos.Framework.ServiceInjector.Contracts.Interfaces.IArgosServiceContainer.AddServiceProviders(Argos.Framework.ServiceInjector.Contracts.Interfaces.IArgosServiceProvider[])">
+            <summary>
+            Adds a list of <see cref="T:Argos.Framework.ServiceInjector.Contracts.Interfaces.IArgosServiceProvider"/> references to this container used to resolve external dependencies.
+            </summary>
+            <param name="serviceProviders">Array of <see cref="T:System.IServiceProvider"/> references.</param>
+        </member>
+        <member name="M:Argos.Framework.ServiceInjector.Contracts.Interfaces.IArgosServiceContainer.RemoveAllServiceProviders">
+            <summary>
+            Removes all <see cref="T:Argos.Framework.ServiceInjector.Contracts.Interfaces.IArgosServiceContainer"/> references.
+            </summary>
+        </member>
+        <member name="M:Argos.Framework.ServiceInjector.Contracts.Interfaces.IArgosServiceContainer.AddService(System.Type,System.Type)">
+            <summary>
+            Adds a service.
+            </summary>
+            <param name="template">Interface to register this service.</param>
+            <param name="implementation">Class used as implementation for this service.</param>
+        </member>
+        <member name="M:Argos.Framework.ServiceInjector.Contracts.Interfaces.IArgosServiceContainer.AddService``2">
+            <summary>
+            Adds a service.
+            </summary>
+            <typeparam name="I">Interface to register this service.</typeparam>
+            <typeparam name="T">Class used as implementation for this service.</typeparam>
+        </member>
+        <member name="M:Argos.Framework.ServiceInjector.Contracts.Interfaces.IArgosServiceContainer.AddSingleton(System.Type,System.Type)">
+            <summary>
+            Adds a singleton service.
+            </summary>
+            <param name="template">Interface to register this singleton service.</param>
+            <param name="implementation">Class used as implementation for this singleton service.</param>
+        </member>
+        <member name="M:Argos.Framework.ServiceInjector.Contracts.Interfaces.IArgosServiceContainer.AddSingleton``2">
+            <summary>
+            Adds a singleton service.
+            </summary>
+            <typeparam name="I">Interface to register this singleton service.</typeparam>
+            <typeparam name="T">Class used as implementation for this singleton service.</typeparam>
+        </member>
+        <member name="M:Argos.Framework.ServiceInjector.Contracts.Interfaces.IArgosServiceContainer.RemoveService(System.Type)">
+            <summary>
+            Removes a registered service in this container.
+            </summary>
+            <param name="template">Interface used when registered the required service.</param>
+        </member>
+        <member name="M:Argos.Framework.ServiceInjector.Contracts.Interfaces.IArgosServiceContainer.RemoveService``1">
+            <summary>
+            Removes a registered service in this container.
+            </summary>
+            <typeparam name="I">Interface used when registered the required service.</typeparam>
+        </member>
+        <member name="M:Argos.Framework.ServiceInjector.Contracts.Interfaces.IArgosServiceContainer.RemoveAllServices">
+            <summary>
+            Removes all registered services in this container.
+            </summary>
+        </member>
+        <member name="T:Argos.Framework.ServiceInjector.Contracts.Interfaces.IArgosServiceProvider">
+            <summary>
+            A service provider object.
+            </summary>
+            <remarks>Use this interface to implements an object to request already registered services in a <see cref="T:Argos.Framework.ServiceInjector.Contracts.Interfaces.IArgosServiceContainer"/>.</remarks>
+        </member>
+        <member name="P:Argos.Framework.ServiceInjector.Contracts.Interfaces.IArgosServiceProvider.ServiceProviders">
+            <summary>
+            Gets a list of the <see cref="T:System.IServiceProvider"/>s that this provider used to resolve external dependencies.
+            </summary>
+        </member>
+        <member name="M:Argos.Framework.ServiceInjector.Contracts.Interfaces.IArgosServiceProvider.ContainsService``1">
+            <summary>
+            Gets if this container has registered the requested service.
+            </summary>
+            <typeparam name="T">The requested service interface.</typeparam>
+            <returns>Returns <see langword="true"/> if the service is registered in this container.</returns>
+        </member>
+        <member name="M:Argos.Framework.ServiceInjector.Contracts.Interfaces.IArgosServiceProvider.ContainsService(System.Type)">
+            <summary>
+            Gets if this container has registered the requested service.
+            </summary>
+            <param name="template">The requested service interface.</param>
+            <returns>Returns <see langword="true"/> if the service is registered in this container.</returns>
+        </member>
+        <member name="M:Argos.Framework.ServiceInjector.Contracts.Interfaces.IArgosServiceProvider.GetGenericService(System.Type,System.Type[])">
+            <summary>
+            Gets an instance for the required generic service.
+            </summary>
+            <param name="template">Interface used when registered the required generic service.</param>
+            <param name="implementations">Array with all classes that the generic service implements. They can be generic classes or other services registered in this container.</param>
+            <returns>Returns a new instance of the generic service or the existing one if is a singleton service.</returns>
+        </member>
+        <member name="M:Argos.Framework.ServiceInjector.Contracts.Interfaces.IArgosServiceProvider.GetService(System.Type)">
+            <summary>
+            Gets an instance for the required service.
+            </summary>
+            <param name="template">Interface used when registered the required service.</param>
+            <returns>Returns a new instance of the service or the existing one if is a singleton service.</returns>
+        </member>
+        <member name="M:Argos.Framework.ServiceInjector.Contracts.Interfaces.IArgosServiceProvider.GetService``1">
+            <summary>
+            Gets an instance for the required service.
+            </summary>
+            <typeparam name="I">Interface used when registered the required service.</typeparam>
+            <returns>Returns a new instance of the service or the existing one if is a singleton service.</returns>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <Authors>José Miguel Sánchez Fernández</Authors>
+    <Company>Visual Studio EX3</Company>
+    <Description>A simple and lightweight service injector library for .NET.</Description>
+    <Copyright>© Visual Studio EX3, José Miguel Sánchez Fernández - 2021</Copyright>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/VisualStudioEX3/Argos-Service-Injector</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/VisualStudioEX3/Argos-Service-Injector</RepositoryUrl>
+    <RepositoryType>GitHub</RepositoryType>
+    <PackageTags>ioc inversion-of-control service-injector di dependency-inyection</PackageTags>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DocumentationFile>D:\Projects\dotNET projects\Argos.Framework.ServiceInjector\Argos.Framework.ServiceInjector\Argos.Framework.ServiceInjector.xml</DocumentationFile>
+  </PropertyGroup>
+
+</Project>

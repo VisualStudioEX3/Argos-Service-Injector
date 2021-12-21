@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31729.503
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Argos.Framework.ServiceInjector", "Argos.Framework.ServiceInjector\Argos.Framework.ServiceInjector.csproj", "{F106A675-9D98-46AE-BFFA-F925CE314AAB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Argos.Framework.ServiceInjector.Tests", "Argos.Framework.ServiceInjector.Tests\Argos.Framework.ServiceInjector.Tests.csproj", "{2BC6CBD2-F060-4B04-ADBD-700F2C55E14E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F106A675-9D98-46AE-BFFA-F925CE314AAB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F106A675-9D98-46AE-BFFA-F925CE314AAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F106A675-9D98-46AE-BFFA-F925CE314AAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F106A675-9D98-46AE-BFFA-F925CE314AAB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2BC6CBD2-F060-4B04-ADBD-700F2C55E14E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2BC6CBD2-F060-4B04-ADBD-700F2C55E14E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2BC6CBD2-F060-4B04-ADBD-700F2C55E14E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2BC6CBD2-F060-4B04-ADBD-700F2C55E14E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {645EC30B-84F2-4A8B-AEFC-8C80F77F78E8}
+	EndGlobalSection
+EndGlobal
