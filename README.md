@@ -4,6 +4,7 @@
 ### A simple and lightweight service injector library for .NET.
 
 [![GitHub](https://img.shields.io/github/license/VisualStudioEX3/Argos.Framework.ServiceInjector?color=yellow)](https://opensource.org/licenses/MIT)
+[![GitHub release (latest by date)](https://img.shields.io/github/v/release/VisualStudioEX3/Argos.Framework.ServiceInjector?color=green)](https://github.com/VisualStudioEX3/Argos.Framework.ServiceInjector/releases/)
 
 A simple to use and setup dependency injection system to use in .NET projects:
 - Supports normal and singleton instance services.
@@ -20,7 +21,6 @@ The initial goal to develop this project was the challenge to understand the inn
 Was developed in **.NET 5** and, a previous developed version was tested in [Artemis](https://github.com/VisualStudioEX3/Artemis) project, a little **Unity 2021** game for a job interview.
 
 ## TODO
-- Publish the first release v1.0.0 (souce code ZIP file, compiled binary and XML doc file for the IDE).
 - Setup github actions.
 - Autopublish on NuGet on sucessfull commits to master branch.
 - Write a simple documentation (maybe using [Doc FX](https://github.com/dotnet/docfx) or simply write a simple wiki).
