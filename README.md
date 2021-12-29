@@ -22,7 +22,6 @@ The initial goal to develop this project was the challenge to understand the inn
 Was developed in **.NET 5** and, a previous developed version was tested in [Artemis](https://github.com/VisualStudioEX3/Artemis) project, a little **Unity 2021** game for a job interview.
 
 ## TODO
-- Setup github actions.
-- Autopublish on NuGet on sucessfull commits to master branch.
 - Write a simple documentation (maybe using [Doc FX](https://github.com/dotnet/docfx) or simply write a simple wiki).
+- Autopublish on NuGet on sucessfull commits to master branch.
 - Improve this README.md content.
