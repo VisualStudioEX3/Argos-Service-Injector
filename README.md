@@ -3,6 +3,7 @@
 
 ### A simple and lightweight service injector library for .NET.
 
+[![Build](https://github.com/VisualStudioEX3/Argos.Framework.ServiceInjector/actions/workflows/main.yml/badge.svg)](https://github.com/VisualStudioEX3/Argos.Framework.ServiceInjector/actions/workflows/main.yml)
 [![GitHub](https://img.shields.io/github/license/VisualStudioEX3/Argos.Framework.ServiceInjector?color=yellow)](https://opensource.org/licenses/MIT)
 [![GitHub release (latest by date)](https://img.shields.io/github/v/release/VisualStudioEX3/Argos.Framework.ServiceInjector?color=green)](https://github.com/VisualStudioEX3/Argos.Framework.ServiceInjector/releases/)
 
